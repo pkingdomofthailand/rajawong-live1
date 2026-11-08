@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ราชวงศ์</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@500;700&family=Noto+Sans+Thai:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c1224;--surface:#131b36;--ink:#f4efe3;--mute:#aab0c6;--gold:#d9b45b;--line:#2b3560;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f7f4ec;--surface:#fff;--ink:#121a3a;--mute:#5a6180;--gold:#8f6a1a;--line:#ddd5bf}}
+:root[data-theme="light"]{--bg:#f7f4ec;--surface:#fff;--ink:#121a3a;--mute:#5a6180;--gold:#8f6a1a;--line:#ddd5bf}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 17px/1.75 "Noto Sans Thai",sans-serif;min-height:100vh}
+h1,h2,h3{margin:0;font-family:"Noto Serif Thai",Georgia,serif}
+header{text-align:center;padding:44px 20px 20px;border-top:3px solid var(--gold)}
+header svg{width:54px;height:auto}
+.brand{font:700 clamp(40px,8vw,72px)/1.2 "Noto Serif Thai",serif;color:var(--gold);margin-top:6px}
+.tag{color:var(--mute);margin:4px 0 0}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;justify-content:center;gap:8px;padding:12px 16px;background:var(--bg);border-bottom:1px solid var(--line);overflow-x:auto}
+nav a{color:var(--ink);text-decoration:none;padding:8px 20px;border:1px solid transparent;white-space:nowrap;font-weight:400}
+nav a:hover{border-color:var(--line)}
+nav a:focus-visible{outline:2px solid var(--gold)}
+nav a[aria-current=page]{border-color:var(--gold);color:var(--gold);font-weight:600}
+main{max-width:1120px;margin:0 auto;padding:48px 20px 72px}
+.view{display:none}.view.on{display:block}
+h2{font-size:clamp(28px,5vw,42px);font-weight:700}
+.lead{color:var(--mute);margin:4px 0 36px;max-width:42em}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(440px,1fr));gap:20px}
+.tile{all:unset;cursor:pointer;display:grid;grid-template-columns:104px 1fr;gap:20px;align-items:center;padding:22px;background:var(--surface);border:1px solid var(--line);position:relative}
+.tile::before,.tile::after{content:"";position:absolute;width:16px;height:16px;border:2px solid var(--gold)}
+.tile::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
+.tile::after{bottom:-1px;right:-1px;border-left:0;border-top:0}
+.tile:hover,.tile:focus-visible{border-color:var(--gold)}
+.tile:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.tile svg{width:104px;height:104px}
+.rk{color:var(--gold);font-weight:600;font-size:14px}
+.tile b{display:block;font:700 18px/1.5 "Noto Serif Thai",serif;margin:2px 0 6px}
+.tile p{margin:0;color:var(--mute);font-size:15px;line-height:1.6}
+.tile .t{color:var(--ink);font-weight:400}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:28px}
+.gal.e{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.item{all:unset;cursor:pointer;display:block}
+.item:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.item svg,.item img{display:block;width:100%;height:auto}
+.tile img{width:104px;height:104px;object-fit:contain}
+dialog img{width:100%;height:auto;display:block}
+.gal:not(.e) .item svg,.gal:not(.e) .item img{box-shadow:0 0 0 1px var(--line)}
+.e .item svg,.e .item img{max-width:170px;margin:0 auto}
+.item b{display:block;margin-top:12px;font:700 15px/1.5 "Noto Serif Thai",serif}
+.item small{color:var(--mute);display:block}
+.e .item{text-align:center}
+.item:hover b{color:var(--gold)}
+dialog{background:var(--surface);color:var(--ink);border:1px solid var(--gold);padding:28px;max-width:600px;width:calc(100% - 32px)}
+dialog::backdrop{background:rgba(4,7,18,.8)}
+dialog h3{font-size:18px;line-height:1.55}
+dialog .pair{display:grid;grid-template-columns:3fr 2fr;gap:18px;align-items:center;margin:18px 0}
+dialog svg{width:100%;height:auto}
+dialog dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 18px}
+dialog dt{color:var(--mute)}dialog dd{margin:0}
+dialog button{font:inherit;font-weight:600;margin-top:20px;padding:9px 24px;background:var(--gold);color:var(--bg);border:0;cursor:pointer}
+footer{max-width:1120px;margin:0 auto;padding:20px;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+@media (max-width:520px){.cards{grid-template-columns:1fr}.tile{grid-template-columns:76px 1fr;gap:14px;padding:16px}.tile svg,.tile img{width:76px;height:76px}.tile b{font-size:16px}}
+@media (prefers-reduced-motion:no-preference){.view.on{animation:in .4s ease-out}@keyframes in{from{opacity:0}to{opacity:1}}}
+</style>
+</head>
+<body>
+<header><svg id="hc" viewBox="0 0 100 90" aria-hidden="true"></svg><div class="brand">ราชวงศ์</div><p class="tag">พระบรมวงศานุวงศ์ในราชอาณาจักร</p></header>
+<nav aria-label="เมนูหลัก"><a href="#podium" data-v="podium">โปเจียม</a><a href="#flags" data-v="flags">ธงประจำพระองค์</a><a href="#emblems" data-v="emblems">ตราประจำพระองค์</a></nav>
+<main>
+<div class="view" id="v-podium"><h2>โปเจียม</h2><p class="lead">ลำดับพระบรมวงศานุวงศ์ทั้ง ๙ พระองค์ ข้อมูลและตราประจำพระองค์ดึงจากฐานข้อมูล</p><div class="cards" id="cards"></div></div>
+<div class="view" id="v-flags"><h2>ธงประจำพระองค์</h2><p class="lead">ธงของแต่ละพระองค์ตามฐานข้อมูล</p><div class="gal" id="fg"></div></div>
+<div class="view" id="v-emblems"><h2>ตราประจำพระองค์</h2><p class="lead">ตราของแต่ละพระองค์ตามฐานข้อมูล</p><div class="gal e" id="eg"></div></div>
+</main>
+<footer>ข้อมูล ตรา และธง ดึงจาก Google Sheets (แท็บโปเจียม ตราประจำพระองค์ ธงประจำพระองค์)</footer>
+<dialog id="dlg"><h3 id="dN"></h3><div class="pair"><div id="dF"></div><div id="dE"></div></div><dl id="dD"></dl><button id="close">ปิด</button></dialog>
+<script>
+var D=[
+[1,"๔๐๒","พระบาทสมเด็จพระศิริศักดิ์ธรรมาธิราช บรรยายรัตน มหาสยามินทร์ประชานาถ ศรีวิสุทธิกุล มหาปรีชานุกูล สุธรรมวรคุณ บรมธรรมิกราชาธิราชเจ้าอยู่หัว","17 พฤศจิกายน พ.ศ. 2538",30,"uiyhrdhr3","พระบาทสมเด็จพระศิริศักดิ์ธรรมาธิราช"],
+[2,"HMQS","สมเด็จพระนางเจ้าสุภัทรา รัตนสิริวิมลลักษณ พระบรมราชินี","6 เมษายน พ.ศ. 2540",29,"Thanadach26","สมเด็จพระนางเจ้าสุภัทรา"],
+[3,"๔๐๓","สมเด็จพระอนุชาธิราช สมเด็จพระวชิรศักดาวุธ วิสุทธิยศมหันตบารมี ตรีโลกนาถธรรมิกราช สยามพิพัฒน์จักรินทร์ มหิธรสมมตเทวราช บรมนารถพงศาธิบดี ตรีภูวเนศวรวิสิษฐ์ เอกอัครมหาบุรุษรัตน์ สรรพชัยสิทธิ์วิบูลย์เกษม มหาวีรบดินทร์มหาราช บรมนาถบพิตร","28 มกราคม พ.ศ. 2541",28,"INDY964843","สมเด็จพระอนุชาธิราช วชิรศักดาวุธ"],
+[4,"HMQSP","สมเด็จพระนางเจ้าศิรินภา บรรยายรัตน พระบรมราชินี พระบรมราชินีในรัชกาลที่ 4","14 สิงหาคม พ.ศ. 2529",40,"Hari_45452","สมเด็จพระนางเจ้าศิรินภา"],
+[5,"๔๐๑","สมเด็จพระเจ้าพี่นางเธอ เจ้าฟ้าสารินีราชสุดา กรมพระสิริโสภาพัณณวดี มหาศิริธรรมธิราชวรภักดี บดินทรเชษฐภคินี สยามบรมราชกุมารี","22 กุมภาพันธ์ พ.ศ. 2527",42,"torddddt","เจ้าฟ้าสารินีราชสุดา"],
+[6,"๔๐๔","สมเด็จพระเจ้าน้องยาเธอ เจ้าฟ้าสมาย สิทธิศักดิ์โสภณ วิมลรัตนราชกุมาร นรินทราธิบดินทร","9 มิถุนายน พ.ศ. 2543",26,"Thai42881","เจ้าฟ้าสมาย สิทธิศักดิ์โสภณ"],
+[7,"๔๐๕","สมเด็จพระเจ้าน้องยาเธอ เจ้าฟ้าราม จักรินทร์เดชานุภาพ มหาจักรินทร์เดโช","31 ตุลาคม พ.ศ. 2544",24,"dorfmwr","เจ้าฟ้าราม จักรินทร์เดชานุภาพ"],
+[8,"๔๐๖","สมเด็จพระเจ้าน้องยาเธอ เจ้าฟ้าคณิน วิทูรปัญญาโกศล มหาเมธาธิบดี","3 มีนาคม พ.ศ. 2546",23,"uiyhrdh","เจ้าฟ้าคณิน วิทูรปัญญาโกศล"],
+[9,"๔๐๗","พระเจ้าวรวงศ์เธอ พระองค์เจ้าวชิรเมธา รวมรัตน์ มหาปรีชานุกูล บวรเดช ศรีสยามกุล","11 กรกฎาคม พ.ศ. 2550",19,"BB53161","พระองค์เจ้าวชิรเมธา รวมรัตน์"]
+];
+var IMG_E={"๔๐๒":"https://i.ibb.co/TM2t7Pqq/1.png","HMQS":"https://i.ibb.co/nq3PFJjR/3.png","๔๐๓":"https://i.ibb.co/My1XDQmz/6.png","HMQSP":"https://i.ibb.co/DD2wWt5H/8.png","๔๐๑":"https://i.ibb.co/YB4SYGq8/10.png","๔๐๔":"https://i.ibb.co/1GTV0Xh5/11.png","๔๐๕":"https://i.ibb.co/VWksj041/13.png","๔๐๖":"https://i.ibb.co/8DpGNrvH/15.png","๔๐๗":"https://i.ibb.co/prJMgN4y/17.png"};
+var IMG_F={"๔๐๒":"https://i.ibb.co/Vc5DswQ0/P.png","HMQS":"https://i.ibb.co/r2wQfLTy/P.png","๔๐๓":"https://i.ibb.co/Xf8fKRkk/P.png","HMQSP":"https://i.ibb.co/wN4GDPZb/P.png","๔๐๑":"https://i.ibb.co/whnMKNMT/P.png","๔๐๔":"https://i.ibb.co/0j67hQW4/P.png","๔๐๕":"https://i.ibb.co/7dd6hsnf/P.png","๔๐๖":"https://i.ibb.co/RkT9q0Wp/P.png","๔๐๗":"https://i.ibb.co/Qjq7wd7Y/P.png"};
+var MO=["มกราคม","กุมภาพันธ์","มีนาคม","เมษายน","พฤษภาคม","มิถุนายน","กรกฎาคม","สิงหาคม","กันยายน","ตุลาคม","พฤศจิกายน","ธันวาคม"];
+var DAYS=["อาทิตย์","จันทร์","อังคาร","พุธ","พฤหัสบดี","ศุกร์","เสาร์"];
+var COL=[["#b3202a","#f6d58a"],["#f2c230","#2a1a05"],["#e58aa8","#3a0f1f"],["#2f7d4b","#f6d58a"],["#e0791f","#2a1405"],["#7db9e8","#0e2a47"],["#6a3d9a","#f6d58a"]];
+var TH="๐๑๒๓๔๕๖๗๘๙";function th(n){return String(n).replace(/\d/g,function(d){return TH[d]})}
+function derive(m){m.e=IMG_E[m[1]];m.f=IMG_F[m[1]];var p=m[3].split(" ");var dt=new Date(Date.UTC(parseInt(p[3])-543,MO.indexOf(p[1]),parseInt(p[0])));m.day=dt.getUTCDay();m.c=COL[m.day];
+var n=m[2];if(n.indexOf("พระบาทสมเด็จ")==0){m.t=5;m.l="พระมหากษัตริย์"}else if(n.indexOf("พระบรมราชินี")>-1){m.t=4;m.l="พระบรมราชินี"}else if(n.indexOf("สมเด็จพระอนุชาธิราช")==0){m.t=4;m.l="สมเด็จพระอนุชาธิราช"}else if(n.indexOf("เจ้าฟ้า")>-1){m.t=3;m.l="เจ้าฟ้า"}else{m.t=2;m.l="พระองค์เจ้า"}}
+D.forEach(derive);
+function crown(t,cx,by,s,col){var h='',y=by,w=60;for(var i=0;i<t;i++){var w2=w-i*9;h+='<polygon points="'+(cx-w2/2)+','+y+' '+(cx+w2/2)+','+y+' '+(cx+w2/2-5)+','+(y-14)+' '+(cx-w2/2+5)+','+(y-14)+'" fill="'+col+'"/>';y-=16}h+='<rect x="'+(cx-1.5)+'" y="'+(y-14)+'" width="3" height="16" fill="'+col+'"/><circle cx="'+cx+'" cy="'+(y-17)+'" r="4" fill="'+col+'"/>';return h}
+function flagSvg(m){return '<svg viewBox="0 0 300 200" role="img" aria-label="ธงประจำพระองค์ '+m[6]+'"><rect width="300" height="200" fill="'+m.c[0]+'"/><rect x="12" y="12" width="276" height="176" fill="none" stroke="'+m.c[1]+'" stroke-width="2"/><g transform="translate(150 0) scale(1.35) translate(-150 0)">'+crown(m.t,150,118,1,m.c[1])+'</g><text x="150" y="172" text-anchor="middle" font-family="Noto Serif Thai,serif" font-weight="700" font-size="'+(m[1].length>3?20:26)+'" fill="'+m.c[1]+'">'+m[1]+'</text></svg>'}
+function embSvg(m){var d='';return '<svg viewBox="0 0 200 200" role="img" aria-label="ตราประจำพระองค์ '+m[6]+'"><circle cx="100" cy="100" r="94" fill="none" stroke="'+m.c[0]+'" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round"/><circle cx="100" cy="100" r="82" fill="'+m.c[0]+'"/><circle cx="100" cy="100" r="74" fill="none" stroke="'+m.c[1]+'" stroke-width="1.5"/><g transform="translate(100 0) scale(.95) translate(-100 0)">'+crown(m.t,100,118,1,m.c[1])+'</g><text x="100" y="152" text-anchor="middle" font-family="Noto Serif Thai,serif" font-weight="700" font-size="'+(m[1].length>3?19:25)+'" fill="'+m.c[1]+'">'+m[1]+'</text></svg>'}
+function flag(m){return m.f?'<img src="'+m.f+'" alt="ธงประจำพระองค์ '+m[6]+'" referrerpolicy="no-referrer" loading="lazy">':flagSvg(m)}
+function emb(m){return m.e?'<img src="'+m.e+'" alt="ตราประจำพระองค์ '+m[6]+'" referrerpolicy="no-referrer" loading="lazy">':embSvg(m)}
+function $(i){return document.getElementById(i)}
+$('hc').innerHTML=crown(5,50,82,1,'#d9b45b');
+function render(){
+$('cards').innerHTML=D.map(function(m,i){return '<button class="tile" data-i="'+i+'">'+emb(m)+'<span><span class="rk">ลำดับที่ '+th(m[0])+' · รหัส '+m[1]+'</span><b>'+m[6]+'</b><p><span class="t">'+m.l+'</span><br>ประสูติ/พระราชสมภพ '+m[3]+' · พรรษา '+th(m[4])+'<br>Roblox: '+m[5]+'</p></span></button>'}).join('');
+$('fg').innerHTML=D.map(function(m,i){return '<button class="item" data-i="'+i+'">'+flag(m)+'<b>'+m[6]+'</b><small>'+m.l+' · วัน'+DAYS[m.day]+'</small></button>'}).join('');
+$('eg').innerHTML=D.map(function(m,i){return '<button class="item" data-i="'+i+'">'+emb(m)+'<b>'+m[6]+'</b><small>'+m.l+'</small></button>'}).join('');
+}
+render();
+var B="https://docs.google.com/spreadsheets/d/e/2PACX-1vQkZgqHnsxvZeLQUjP-txvEJGRDVXUybjdSgLaY-KelrsvoB4RwQmapFqYmvLy9i1kGFjaQmArV0VvA/pub?single=true&output=csv&gid=";
+function csv(t){var r=[],row=[],c="",q=false;for(var i=0;i<t.length;i++){var ch=t[i];if(q){if(ch=='"'){if(t[i+1]=='"'){c+='"';i++}else q=false}else c+=ch}else if(ch=='"')q=true;else if(ch==','){row.push(c);c=""}else if(ch=='\n'||ch=='\r'){if(ch=='\r'&&t[i+1]=='\n')i++;row.push(c);r.push(row);row=[];c=""}else c+=ch}if(c||row.length){row.push(c);r.push(row)}return r.slice(1).filter(function(x){return x[1]})}
+function get(g){return fetch(B+g).then(function(r){if(!r.ok)throw 0;return r.text()}).then(csv)}
+Promise.all([get(0),get(1595510888),get(836629178)]).then(function(a){
+var e={},f={};a[1].forEach(function(x){e[x[1].trim()]=x[2].trim()});a[2].forEach(function(x){f[x[1].trim()]=x[2].trim()});
+var old={};D.forEach(function(m){old[m[1]]=m[6]});
+var nd=a[0].map(function(x){var k=x[1].trim();var m=[parseInt(x[0]),k,x[2].trim(),x[3].trim(),parseInt(x[4]),(x[5]||"").trim(),old[k]||x[2].trim().split(" ").slice(0,3).join(" ")];IMG_E[k]=e[k];IMG_F[k]=f[k];return m});
+if(nd.length){D=nd;D.forEach(derive);render()}}).catch(function(){});
+function route(){var h=(location.hash||'#podium').slice(1);if(['podium','flags','emblems'].indexOf(h)<0)h='podium';
+['podium','flags','emblems'].forEach(function(v){$('v-'+v).classList.toggle('on',v===h)});
+document.querySelectorAll('nav a').forEach(function(a){if(a.getAttribute('data-v')===h)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});window.scrollTo(0,0)}
+window.addEventListener('hashchange',route);route();
+var dlg=$('dlg');
+document.addEventListener('click',function(e){var b=e.target.closest('[data-i]');if(!b)return;var m=D[b.getAttribute('data-i')];$('dN').textContent=m[2];$('dF').innerHTML=flag(m);$('dE').innerHTML=emb(m);$('dD').innerHTML='<dt>ลำดับ</dt><dd>'+th(m[0])+'</dd><dt>รหัส</dt><dd>'+m[1]+'</dd><dt>พระอิสริยยศ</dt><dd>'+m.l+'</dd><dt>วันที่</dt><dd>'+m[3]+' (วัน'+DAYS[m.day]+')</dd><dt>พรรษา</dt><dd>'+th(m[4])+'</dd><dt>Roblox</dt><dd>'+m[5]+'</dd>';dlg.showModal()});
+$('close').addEventListener('click',function(){dlg.close()});
+dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
+</script>
+</body>
+</html>
